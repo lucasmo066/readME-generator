@@ -1,19 +1,24 @@
+//EXTERNAL PACKAGES
 const inquirer = require('inquirer');
+const fs = require('fs');
+const util = require('util');
+
+// INTERNAL PACKAGES
 const generateReadMe = require('./src/readme-template.js');
 const {writeFile} = require('./utils/generate-ReadMe.js');
-const fs = require('fs');
 
+// INQUIRER PROMPTS FOR userResponses
 const promptUser =()=>{
     return inquirer.prompt([
         {
             type: 'input',
             name:'username',
-            message: 'Please enter your GitHub username. (required)',
+            message: 'Please enter your GitHub username. (No @ needed)',
             validate: usernameInput=>{
                 if(usernameInput){
                     return true;
                 }else{
-                    console.log('Please enter your GitHub Username!');
+                    console.log('A valid GitHub username is required.');
                     return false;
                 }
             }
@@ -121,7 +126,6 @@ const promptUser =()=>{
         }
     ]);
 };
-
 
         promptUser()
     .then(answers=>{
