@@ -5,8 +5,7 @@ const generateInstall = installText =>{
     }
 
     return `
-
-    ## Installation
+## Installation
 ${installText}
     `
 }
@@ -17,8 +16,7 @@ const generateContribute =contributeText=>{
     }
 
     return `
-
-    ## Contributing
+## Contributing
 ${contributeText}
     `
 }
@@ -29,8 +27,7 @@ const generateTest = testText=>{
     }
 
     return `
-
-    ## Test
+## Test
 ${testText}
     `
 }
@@ -41,13 +38,11 @@ const generateToC =(tableText, installation, contributing, test, required)=>{
     } else{
 
     let tocDraft = `
-
-    ## Table of Contents   
+## Table of Contents   
     `
     if(installation){
         tocDraft += `
-
-        * [Installation](#Installation)`
+* [Installation](#Installation)`
     };
 
     tocDraft+=`
@@ -56,19 +51,16 @@ const generateToC =(tableText, installation, contributing, test, required)=>{
 
     if(contributing){
         tocDraft += `
-
-        * [Contributing](#Contributing)`
+* [Contributing](#Contributing)`
     };
 
     if(test){
         tocDraft+=`
-
-        * [Test](#Test)`
+* [Test](#Test)`
     };
 
     tocDraft += `
-
-    * [Questions](#Questions)`;
+* [Questions](#Questions)`;
 
     return tocDraft;
     }
@@ -80,23 +72,19 @@ module.exports = answers =>{
     return `
 # ${required.name}
 ![license](https://img.shields.io/badge/License-${required.license}-blue)
-
 ## Description
 ${required.Description}
 ${generateToC(confirmTable, installation, contributing, test, required)}
 ${generateInstall(installation)}
-
 ## Usage
 ${required.usage}
-
 ## License
 This project is licensed under ${required.license}
 ${generateContribute(contributing)}
 ${generateTest(test)}
-
 ## Questions 
 Click on my username to be directed to my GitHub profile. [${required.username}](https://github.com/${required.username})
     
-If you have any questions about this project, reach out via email at ${required.questions}
+If you have any questions about this project, please feel free to reach out via email at ${required.questions}
 `
 };
