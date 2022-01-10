@@ -4,8 +4,8 @@ const fs = require('fs');
 const util = require('util');
 
 // INTERNAL PACKAGES
-const generateReadMe = require('./src/readme-template.js');
-const {writeFile} = require('./utils/generate-ReadMe.js');
+const generateReadMe = require('./src/readME-template.js');
+const {writeFile} = require('./utils/generate-readME.js');
 
 // INQUIRER PROMPTS FOR userResponses
 const promptUser =()=>{
@@ -127,7 +127,7 @@ const promptUser =()=>{
     ]);
 };
 
-        promptUser()
+promptUser()
     .then(answers=>{
         return generateReadMe(answers);
     })
