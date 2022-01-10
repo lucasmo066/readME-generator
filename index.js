@@ -31,7 +31,7 @@ const promptUser =()=>{
                 if(nameInput){
                     return true;
                 } else {
-                    console.log('Please enter a title for your project!');
+                    console.log('A valid project title is required.');
                     return false
                 }
             }
@@ -44,7 +44,7 @@ const promptUser =()=>{
                 if(descriptionInput){
                     return true;
                 } else {
-                    console.log('Please enter a description!');
+                    console.log('A valid project description is required.');
                     return false;
                 }
             }
