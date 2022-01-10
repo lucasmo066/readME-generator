@@ -18,3 +18,7 @@ Answer the prompts in your command line to generate the README.
 After answering all the prompts, your README file will be named 'newReadME.md' and will be ready for you at the root of the repo.
 
 The README has some automatically generated badges for your repo courtesy of shields.io and will include your profile picture & email from GitHub.
+
+## Usage
+
+Checkout the example video to see how the project functions!
